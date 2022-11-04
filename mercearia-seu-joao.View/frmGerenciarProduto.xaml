@@ -1,0 +1,28 @@
+﻿<Window x:Class="mercearia_seu_joao.View.frmGerenciarProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mercearia_seu_joao.View"
+        mc:Ignorable="d"
+        Title="frmGerenciarProduto" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid x:Name="frmGerenciarProduto1" Background="#FF078231">
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="47,399,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="47,366,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="47,333,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="47,300,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="250,35,10,23"/>
+        <TextBox x:Name="boxQuantidade" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="47,177,0,0" Height="28" Background="#FF43F780"/>
+        <TextBlock x:Name="txtId" HorizontalAlignment="Left" Margin="47,35,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
+        <TextBox x:Name="boxFornecedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,252,0,0" Height="28" Background="#FF43F780"/>
+        <TextBox x:Name="boxNome" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,116,0,0" Height="28" Background="#FF43F780"/>
+        <TextBlock x:Name="txtNome" HorizontalAlignment="Left" Margin="47,94,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtQuantidade" HorizontalAlignment="Left" Margin="47,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Quantidade"/></TextBlock>
+        <TextBlock x:Name="txtPrecoUnitario" HorizontalAlignment="Left" Margin="146,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Text="Pre"/><Run Text="ç"/><Run Text="o"/><Run Text=" "/><Run Text="Unit"/><Run Language="pt-br" Text="á"/><Run Text="rio"/></TextBlock>
+        <TextBlock x:Name="txtFornecedor" HorizontalAlignment="Left" Margin="47,231,0,0" TextWrapping="Wrap" Text="Fornecedor" VerticalAlignment="Top"/>
+        <TextBox x:Name="boxPrecoUnitario" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="146,177,0,0" Height="28" Background="#FF43F780"/>
+        <TextBlock x:Name="boxId" HorizontalAlignment="Left" Margin="47,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF43F780" Height="27" Width="42"/>
+
+
+    </Grid>
+</Window>
