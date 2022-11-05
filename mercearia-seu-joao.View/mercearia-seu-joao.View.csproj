@@ -9,7 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="sombra-de-usuario-masculino.png" />
+    <None Remove="x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\mercearia-seu-joao.Controller\mercearia-seu-joao.Controller.csproj" />
+    <ProjectReference Include="..\mercearia-seu-joao.Model\mercearia-seu-joao.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="sombra-de-usuario-masculino.png" />
+    <Resource Include="x.png" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="mercearia_seu_joao.View.frmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mercearia_seu_joao.View"
+        mc:Ignorable="d"
+        Title="frmLogin" Height="640" Width="360" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" Background="#FF078231">
+    <Grid x:Name="TelaLogin">
+        <TextBox x:Name="boxEmail" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Margin="0,268,0,0" Height="30" Background="#FF43F780" Padding="10,0,0,0" FontSize="22"/>
+        <TextBlock x:Name="txtEmail" HorizontalAlignment="Left" Margin="40,244,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="txtSenha" HorizontalAlignment="Left" Margin="40,357,0,0" TextWrapping="Wrap" Text="Senha:" VerticalAlignment="Top" FontSize="18"/>
+        <PasswordBox x:Name="boxSenha" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="310" Height="30" FontSize="22" Background="#FF43F780" BorderBrush="{x:Null}" Padding="10,-2,0,5" VerticalContentAlignment="Top"/>
+        <TextBlock x:Name="txtEsqueceuSenha" HorizontalAlignment="Center" Margin="0,424,0,0" TextWrapping="Wrap" Text="Esqueceu sua Senha?" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="White" MouseLeftButtonDown="EsqueceuSenha"/>
+        <Button x:Name="btnRealizarLogin" Content="Realizar Login" HorizontalAlignment="Center" Margin="0,527,0,0" VerticalAlignment="Top" FontSize="20" Width="156" Background="Black" BorderBrush="{x:Null}" Height="40" Foreground="White" Click="RealizarLogin"/>
+        <Image x:Name="imgFechar" HorizontalAlignment="Left" Height="42" Margin="309,10,0,0" VerticalAlignment="Top" Width="41" Source="/x.png" MouseLeftButtonDown="Fechar"/>
+        <Image HorizontalAlignment="Center" Height="100" Margin="0,105,0,0" VerticalAlignment="Top" Width="100" Source="/sombra-de-usuario-masculino.png"/>
+
+    </Grid>
+</Window>
