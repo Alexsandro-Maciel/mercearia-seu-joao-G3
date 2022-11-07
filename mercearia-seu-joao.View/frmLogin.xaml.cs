@@ -27,12 +27,25 @@ namespace mercearia_seu_joao.View
 
         private void RealizarLogin(object sender, RoutedEventArgs e)
         {
+            if (VerificarCamposPreenchidos() == true)
+            {
+                ConsultasUsuario.ObterUsuarioPeloEmailSenha(boxEmail.Text.ToString(), boxSenha.Password.ToString();
+            }
 
+            else
+            {
+                Mensagens.MensagemPreenchaTodosCampos();
+            }
         }
 
         private void Fechar(object sender, MouseButtonEventArgs e)
         {
             Close();
+        }
+
+        private bool VerificarCamposPreenchidos()
+        {
+            return boxEmail.Text == null || boxSenha.Password == null ? false : true;
         }
     }
 }
