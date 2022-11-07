@@ -15,4 +15,13 @@ public static class Mensagens
                         MessageBoxImage.Information
                         );
     }
+
+    public static void MensagemPreenchaTodosCampos()
+    {
+        MessageBox.Show("Preencha todos os campos.",
+                        "Atenção",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning
+                        );
+    }
 }
