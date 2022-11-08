@@ -24,4 +24,13 @@ public static class Mensagens
                         MessageBoxImage.Warning
                         );
     }
+
+    public static void MensagemDadosIncorretos()
+    {
+        MessageBox.Show("Email ou senha incorretos!",
+                        "Atenção",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning
+                        );
+    }
 }
