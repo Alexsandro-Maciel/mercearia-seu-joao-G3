@@ -29,7 +29,20 @@ namespace mercearia_seu_joao.View
         {
             if (VerificarCamposPreenchidos() == true)
             {
-                ConsultasUsuario.ObterUsuarioPeloEmailSenha(boxEmail.Text.ToString(), boxSenha.Password.ToString();
+                string email = boxEmail.Text.ToString();
+                string senha = boxSenha.Password.ToString();
+
+                Usuario usuario = cUsuario.ObterUsuarioPeloEmailSenha(email, senha);
+
+                if (usuario != null)
+                {
+                    AbrirFrmMenu();
+                }
+
+                else
+                {
+                    Mensagens.MensagemDadosIncorretos();
+                }
             }
 
             else
@@ -46,6 +59,13 @@ namespace mercearia_seu_joao.View
         private bool VerificarCamposPreenchidos()
         {
             return boxEmail.Text == null || boxSenha.Password == null ? false : true;
+        }
+
+        private void AbrirFrmMenu()
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Show();
+            Close();
         }
     }
 }
