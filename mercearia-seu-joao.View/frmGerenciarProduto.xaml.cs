@@ -67,7 +67,7 @@ namespace mercearia_seu_joao.View
             LimpaTodosOsCampos();
         }
 
-        private void AtualizarProduto(object sender, ContextMenuEventArgs e)
+        private void AtualizarProduto(object sender, RoutedEventArgs e)
         {
             if (boxId.Text != "")
             {
