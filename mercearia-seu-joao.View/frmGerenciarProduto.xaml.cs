@@ -12,40 +12,166 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-public class GerenciarProduto
+
+namespace mercearia_seu_joao.View
 {
-    public static bool InserirProduto(string nome, int qtdEstoque, float precoUnitario, string fornecedor)
+    public partial class frmGerenciarProduto : Window
     {
-        return ConsultarProduto.InserirProduto(nome, qtdEstoque, precoUnitario, fornecedor);
-    }
+        List<Produto> listaDeProdutos = new List<Produto>();
+        public frmGerenciarProduto()
+        {
+            InitializeComponent();
+        }
 
-    public static bool ExcluirProduto(int id)
-    {
-        return ConsultarProduto.ExcluirProduto(id);
-    }
+        private bool VerificaCampos()
+        {
+            if (txtNome.Text != "" && boxNome.Text != "" && boxPrecoUnitario.Text != "" && boxQuantidade.Text != "" && boxFornecedor.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private void NovoProduto(object sender, RoutedEventArgs e)
+        {
+            if (VerificaCampos() == true)
+            {
+                if (boxId.Text == "")
+                {
+                    AdicionaProduto();
+                }
+                else
+                {
+                    Mensagens.ExibirMensagemIdCampoPreenchido();
+                }
+            }
+            else
+            {
+                Mensagens.ExibirMensagemPreencherCampos();
+            }
+        }
 
-    public static bool AlterarProduto(int id, string nome, int qtdEstoque, float precoUnitario, string fornecedor)
-    {
-        return ConsultarProduto.AlterarProduto(id, nome, qtdEstoque, precoUnitario, fornecedor);
-    }
+        private void LimpaTodosOsCampos()
+        {
+            boxId.Text = "";
+            boxNome.Text = "";
+            boxQuantidade.Text = "";
+            boxFornecedor.Text = "";
+            boxPrecoUnitario.Text = "";
+        }
 
-    public static List<Produto> ObterTodosProdutos()
-    {
-        return ConsultarProduto.ObterTodosProdutos();
-    }
+        private void LimparCampos(object sender, RoutedEventArgs e)
+        {
+            LimpaTodosOsCampos();
+        }
 
-    private void LimpaTodosOsCampos(int boxId, string boxNome, int boxQuantidade, float boxPrecoUnitario, string boxFornecedor)
-    {
-        boxId.Text = "";
-        boxNome.Text = "";
-        boxQuantidade.Text = "";
-        boxPrecoUnitario.Text = "";
-        boxFornecedor.Text = "";
-    }
+        private void AtualizarProduto(object sender, ContextMenuEventArgs e)
+        {
+            if (boxId.Text != "")
+            {
+                int id = int.Parse(boxId.Text);
+                MessageBoxResult result = MessageBox.Show(
+                    $"Deseja alterar o produto id:{id} ?",
+                    "Alterar Produto",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    bool foiAtualizado = cProduto.AlterarProduto(
+                        id,
+                        boxNome.Text,
+                        Int32.Parse(boxQuantidade.Text),
+                        Single.Parse(boxPrecoUnitario.Text),
+                        boxFornecedor.Text
+                        );
 
-    private void LimparCampos(object sender, RoutedEventArgs e)
-    {
-        LimpaTodosOsCampos();
+                    if (foiAtualizado == true)
+                    {
+                        Mensagens.ExibirMensagemProdutoAtualizado();
+                        LimpaTodosOsCampos();
+                        AtualizaDataGrid();
+                    }
+                    else
+                    {
+                        Mensagens.ExibirMensagemErroProdutoAtualizado();
+                    }
+                }
+            }
+        }
+
+        private void ExcluirProduto(object sender, RoutedEventArgs e)
+        {
+            if (boxId.Text != "")
+            {
+                int id = int.Parse(boxId.Text);
+                MessageBoxResult result = MessageBox.Show(
+                    $"Deseja excluir o produto id:{id} ?",
+                    "Excluir Produto",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    bool foiExcluido = cProduto.ExcluirProduto(id);
+                    if (foiExcluido == true)
+                    {
+                        Mensagens.ExibirMensagemProdutoExcluido();
+
+                        LimpaTodosOsCampos();
+                        AtualizaDataGrid();
+                    }
+                    else
+                    {
+                        Mensagens.ExibirMensagemErroProdutoExcluido();
+                    }
+                }
+            }
+        }
+
+        private void AdicionaProduto()
+        {
+            bool foiInserido = cProduto.InserirProduto(
+                boxNome.Text,
+                Int32.Parse(boxQuantidade.Text),
+                Single.Parse(boxPrecoUnitario.Text),
+                boxFornecedor.Text
+                );
+
+            if (foiInserido == true)
+            {
+                Mensagens.ExibirMensagemProdutoCadastrado();
+                LimpaTodosOsCampos();
+                AtualizaDataGrid();
+            }
+            else
+            {
+                Mensagens.ExibirMensagemErroProdutoCadastrado();
+            }
+        }
+
+        private void AtualizaDataGrid()
+        {
+            listaDeProdutos.Clear();
+            listaDeProdutos = cProduto.ObterTodosProdutos();
+            dgvProdutos.ItemsSource = listaDeProdutos;
+            dgvProdutos.Items.Refresh();
+        }
+
+        private void PegarItemNoGrid(object sender, MouseButtonEventArgs e)
+        {
+            Produto produto = (Produto)
+            dgvProdutos.SelectedItem;
+            boxId.Text = produto.id.ToString();
+            boxNome.Text = produto.nome;
+            boxQuantidade.Text = produto.qtdEstoque.ToString();
+            boxPrecoUnitario.Text = produto.precoUnitario.ToString();
+            boxFornecedor.Text = produto.fornecedor;
+        }
+
+        private void Sair(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
-

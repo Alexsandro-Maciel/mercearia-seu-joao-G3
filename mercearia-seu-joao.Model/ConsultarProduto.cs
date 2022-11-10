@@ -50,7 +50,9 @@ public class ConsultarProduto
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                DELETE FROM Produto WHERE id = @id;";
+                INSERT INTO Produto (dataExclusao) 
+                VALUES (@dataExclusao)
+                WHERE id = @id";
             comando.Parameters.AddWithValue("@id", id);
             var leitura = comando.ExecuteReader();
             foiExcluido = true;
@@ -113,7 +115,8 @@ public class ConsultarProduto
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                SELECT * FROM Produto";
+                SELECT * FROM Produto 
+                WHERE dataExclusao = null";
             var leitura = comando.ExecuteReader();
             while (leitura.Read())
             {
@@ -121,8 +124,9 @@ public class ConsultarProduto
                 produto.id = leitura.GetInt32("id");
                 produto.nome = leitura.GetString("nome");
                 produto.precoUnitario = (float)leitura.GetDecimal("precoUnitario");
-                produto.fornecedor = leitura.GetString("fabricante");
+                produto.fornecedor = leitura.GetString("fornecedor");
                 produto.qtdEstoque = leitura.GetInt32("qtdEstoque");
+
 
                 listaDeProdutos.Add(produto);
             }

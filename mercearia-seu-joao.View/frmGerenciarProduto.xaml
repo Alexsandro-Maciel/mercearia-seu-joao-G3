@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="frmGerenciarProduto" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid Background="#FF078231">
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="47,399,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
-        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="47,366,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
-        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="47,333,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
-        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="47,300,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780"/>
-        <DataGrid x:Name="dbProduto" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="260,35,0,23" MouseDoubleClick="dbProduto" SelectionChanged="dbProduto_SelectionChanged"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="47,399,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="ExcluirProduto"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="47,366,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="AtualizarProduto"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="47,333,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="LimparCampos"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="47,300,0,0" VerticalAlignment="Top" Height="28" Width="153" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="NovoProduto"/>
+        <DataGrid x:Name="dgvProdutos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="260,35,0,23" MouseDoubleClick="dbProduto" SelectionChanged="dbProduto_SelectionChanged"/>
         <TextBox x:Name="boxQuantidade" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="47,177,0,0" Height="28" Background="#FF43F780"/>
         <TextBlock x:Name="txtId" HorizontalAlignment="Left" Margin="47,35,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
         <TextBox x:Name="boxFornecedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,252,0,0" Height="28" Background="#FF43F780"/>
