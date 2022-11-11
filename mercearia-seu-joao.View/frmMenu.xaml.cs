@@ -19,24 +19,58 @@ namespace mercearia_seu_joao.View
     /// </summary>
     public partial class frmMenu : Window
     {
+
         public frmMenu()
         {
             InitializeComponent();
+            Main();
         }
 
         private void Produto(object sender, RoutedEventArgs e)
         {
+            AbrirfrmGerenciarProduto();
+        }
+
+        private void AbrirfrmGerenciarProduto()
+        {
+            frmGerenciarProduto frmGerenciarProduto = new frmGerenciarProduto();
+            frmGerenciarProduto.Show();
             
         }
-
         private void EfetuarVenda(object sender, RoutedEventArgs e)
         {
-
+            
         }
-
+        private void Abrirfrmlogin()
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            Close();
+        }
         private void Usuario(object sender, RoutedEventArgs e)
         {
-
+            AbrirfrmGerenciarUsuario();
         }
+        private void AbrirfrmGerenciarUsuario()
+        {
+            frmGerenciarUsuarios frmGerenciarUsuarios = new frmGerenciarUsuarios();
+            frmGerenciarUsuarios.Show();
+        }
+
+        private void Sair(object sender, RoutedEventArgs e)
+        {
+            Abrirfrmlogin();
+        }
+
+        public void Main()
+        {
+            string data = DateTime.Now.ToString(" d MMMM yyyy ");
+            txtblockNome.Text = $"Olá fulano, hoje é dia {data}";
+        }
+        
+
     }
+
+
+
 }

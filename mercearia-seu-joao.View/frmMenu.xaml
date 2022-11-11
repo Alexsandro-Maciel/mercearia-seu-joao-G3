@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="frmMenu" Height="450" Width="800">
     <Grid Background="#FF078231">
-        <Button x:Name="btnUsuário" Content="Usuário" HorizontalAlignment="Left" Margin="339,189,0,0" VerticalAlignment="Top" Height="69" Width="149" RenderTransformOrigin="0.5,0.5" Click="Usuario" Background="#FF43F780">
+        <Button x:Name="btnUsuário" Content="Usuário" HorizontalAlignment="Left" Margin="342,148,0,0" VerticalAlignment="Top" Height="75" Width="148" RenderTransformOrigin="0.5,0.5" Click="Usuario" Background="#FF43F780">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,7 +17,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btnEfetuarVenda" Content="Efetuar Venda" HorizontalAlignment="Left" Margin="596,189,0,0" VerticalAlignment="Top" Height="69" Width="149" RenderTransformOrigin="0.5,0.5" Click="EfetuarVenda" Background="#FF43F780">
+        <Button x:Name="btnEfetuarVenda" Content="Efetuar Venda" HorizontalAlignment="Left" Margin="589,144,0,0" VerticalAlignment="Top" Height="81" Width="149" RenderTransformOrigin="0.5,0.5" Click="EfetuarVenda" Background="#FF43F780">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,7 +27,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btnProduto" Content="Produto" HorizontalAlignment="Left" Margin="82,187,0,0" VerticalAlignment="Top" Height="69" Width="149" RenderTransformOrigin="0.5,0.5" Click="Produto" Background="#FF43F780">
+        <Button x:Name="btnProduto" Content="Produto" HorizontalAlignment="Left" Margin="97,148,0,0" VerticalAlignment="Top" Height="76" Width="148" RenderTransformOrigin="0.5,0.5" Click="Produto" Background="#FF43F780">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -37,7 +37,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btnEfetuarVenda_Copy" Content="Sair" HorizontalAlignment="Left" Margin="605,314,0,0" VerticalAlignment="Top" Height="69" Width="149" RenderTransformOrigin="0.5,0.5" Click="EfetuarVenda" Background="#FF43F780">
+        <Button x:Name="btnSairParaLogin" Content="Sair" HorizontalAlignment="Left" Margin="588,286,0,0" VerticalAlignment="Top" Height="70" Width="149" RenderTransformOrigin="0.5,0.5" Click="Sair" Background="#FF43F780">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -47,7 +47,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="73,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="715" Height="86" Text="Merceária do seu João" FontSize="60" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="txtMercearia" HorizontalAlignment="Left" Margin="49,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="714" Height="86" FontSize="60" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,8 +55,8 @@
                     <RotateTransform/>
                     <TranslateTransform Y="0.613"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
+            </TextBlock.RenderTransform><Run Text="  "/><Run Language="pt-br" Text=" "/><Run Text="Mercearia"/><Run Text=" do seu"/><Run Text=" João"/></TextBlock>
+        <TextBlock x:Name="txtblockNome" HorizontalAlignment="Center" Margin="0,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="778" Height="51" FontSize="40" Text=""/>
 
     </Grid>
 </Window>
