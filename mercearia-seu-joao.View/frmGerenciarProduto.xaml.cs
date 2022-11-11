@@ -137,12 +137,13 @@ namespace mercearia_seu_joao.View
                 Single.Parse(boxPrecoUnitario.Text),
                 boxFornecedor.Text
                 );
+           
 
-            if (foiInserido == true)
+            if (foiInserido == false)
             {
                 Mensagens.ExibirMensagemProdutoCadastrado();
-                LimpaTodosOsCampos();
                 AtualizaDataGrid();
+                LimpaTodosOsCampos();
             }
             else
             {
