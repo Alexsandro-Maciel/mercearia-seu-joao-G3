@@ -25,6 +25,15 @@ public static class Mensagens
                         );
     }
 
+    public static void MensagemDadosIncorretos()
+    {
+        MessageBox.Show("Email e/ou senha incorretos.",
+                        "Atenção",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning
+                        );
+    }
+
     public static void ExibirMensagemIdCampoPreenchido()
     {
         MessageBoxResult result = MessageBox.Show(
