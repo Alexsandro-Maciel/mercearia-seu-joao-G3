@@ -34,6 +34,7 @@ namespace mercearia_seu_joao.View
                 return false;
             }
         }
+
         private void NovoProduto(object sender, RoutedEventArgs e)
         {
             if (VerificaCampos() == true)
