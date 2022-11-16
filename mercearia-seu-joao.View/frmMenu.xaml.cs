@@ -53,7 +53,7 @@ namespace mercearia_seu_joao.View
         }
         private void AbrirfrmGerenciarUsuario()
         {
-            frmGerenciarUsuarios frmGerenciarUsuarios = new frmGerenciarUsuarios();
+            frmGerenciarUsuario frmGerenciarUsuarios = new frmGerenciarUsuario();
             frmGerenciarUsuarios.Show();
         }
 

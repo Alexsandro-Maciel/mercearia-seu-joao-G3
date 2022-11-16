@@ -10,5 +10,26 @@ public class cUsuario
     {
         return ConsultasUsuario.ObterUsuarioPeloEmailSenha(email, senha);
     }
+    public static bool VerificarUsuarioExistente(string email)
+    {
+        return ConsultasUsuario.VerificarUsuarioExistente(email);
+    }
+
+    public static bool NovoUsuario(string email, string senha, string nome, string data, string tipoUsuario)
+    {
+        return ConsultasUsuario.NovoUsuario(email, senha, nome, data, tipoUsuario);
+    }
+    public static List<Usuario> ObterTodosUsuarios()
+    {
+        return ConsultasUsuario.ObterTodosUsuarios();
+    }
+    public static bool AlterarUsuario(int id, string nome, string email, string senha, string data, string tipoUsuario)
+    {
+        return ConsultasUsuario.AlterarUsuario(id, nome, email, senha, data, tipoUsuario);
+    }
+    public static bool ExcluirUsuario(int id, string data)
+    {
+        return ConsultasUsuario.ExcluirUsuario(id, data);
+    }
 }
 

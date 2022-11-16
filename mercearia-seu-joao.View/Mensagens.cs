@@ -107,5 +107,54 @@ public static class Mensagens
                              MessageBoxButton.OK,
                              MessageBoxImage.Error);
     }
+    public static void ExibirMensagemUsuarioAdicionado()
+    {
+        MessageBoxResult result9 = MessageBox.Show(
+                             "O produto foi adicionado com sucesso!",
+                             "Informação",
+                             MessageBoxButton.OK,
+                             MessageBoxImage.Error);
+    }
+    public static void ExibirMensagemErroUsuarioCadastrado()
+    {
+        MessageBoxResult result10 = MessageBox.Show(
+                            "Não possível inserir o Usuario, tente novamente mais tarde!",
+                            "Atenção",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
+    }
+    public static void ExibirMensagemUsuarioAtualizado()
+    {
+        MessageBoxResult result11 = MessageBox.Show(
+                         "Usuario foi atualizado com sucesso!",
+                         "Informação",
+                          MessageBoxButton.OK,
+                          MessageBoxImage.Information);
+    }
+    public static void ExibirMensagemErroUsuarioAtualizado()
+    {
+        MessageBoxResult result12 = MessageBox.Show(
+                         "Não possível atualizar o Usuario, tente novamente mais tarde!",
+                         "Atenção",
+                          MessageBoxButton.OK,
+                          MessageBoxImage.Error);
+    }
+    public static void ExibirMensagemUsuarioExcluido()
+    {
+        MessageBoxResult result13 = MessageBox.Show(
+                            "Usuario foi excluido com sucesso!",
+                            "Informação",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+    }
+
+    public static void ExibirMensagemErroUsuarioExcluido()
+    {
+        MessageBoxResult result14 = MessageBox.Show(
+                             "Não possível excluir o usuario, tente novamente mais tarde!",
+                             "Error",
+                             MessageBoxButton.OK,
+                             MessageBoxImage.Error);
+    }
 }
 
