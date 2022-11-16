@@ -18,7 +18,6 @@ namespace mercearia_seu_joao.View
     {
         List<Usuario> listaDeUsuarios = new List<Usuario>();
 
-        bool validado = false;
         public frmGerenciarUsuario()
         {
             InitializeComponent();
@@ -95,13 +94,11 @@ namespace mercearia_seu_joao.View
             }
             if (isNumeroValidos == true && isLetrasValidas == true && isCaracteresEspeciaisValidos == true && isTamanhoMinimoValido == true && isMaiusculas == true)
             {
-                validado = true;
                 return true;
             }
 
             else
             {
-                validado = false;
                 return false;
             }
         }
@@ -152,44 +149,49 @@ namespace mercearia_seu_joao.View
 
         private void Novo(object sender, RoutedEventArgs e)
         {
-            if (validado == true)
+            if (VerificaCampos() == true)
             {
-                AdicionarUsuario();
+                if (ValidarSenha(boxSenha.Password) == true)
+                {
+                    AdicionarUsuario();
+                }
             }
         }
 
         private void AtualizarUsuario(object sender, RoutedEventArgs e)
         {
             string data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-            if (boxId.Text != "")
+            if (VerificaCampos() == true)
             {
-                int id = int.Parse(txtId.Text);
-                MessageBoxResult result = MessageBox.Show(
-                    $"Deseja alterar o usuário id:{id} ?",
-                    "Alterar Usuário",
-                    MessageBoxButton.YesNo,
-                    MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes)
+                if (boxId.Text != "")
                 {
-                    bool foiAtualizado = cUsuario.AlterarUsuario(
-                        id,
-                        boxNome.Text,
-                        boxEmail.Text,
-                        boxSenha.Password,
-                        data,
-                        cbTipoUsuario.Text
-                        );
+                    int id = int.Parse(txtId.Text);
+                    MessageBoxResult result = MessageBox.Show(
+                        $"Deseja alterar o usuário id:{id} ?",
+                        "Alterar Usuário",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        bool foiAtualizado = cUsuario.AlterarUsuario(
+                            id,
+                            boxNome.Text,
+                            boxEmail.Text,
+                            boxSenha.Password,
+                            data,
+                            cbTipoUsuario.Text
+                            );
 
-                    if (foiAtualizado == true)
-                    {
-                        Mensagens.ExibirMensagemUsuarioAtualizado();
-                        LimpaTodosOsCampos();
-                        AtualizaDataGrid();
-                    }
-                    else
-                    {
-                        Mensagens.ExibirMensagemErroUsuarioAtualizado();
+                        if (foiAtualizado == true)
+                        {
+                            Mensagens.ExibirMensagemUsuarioAtualizado();
+                            LimpaTodosOsCampos();
+                            AtualizaDataGrid();
+                        }
+                        else
+                        {
+                            Mensagens.ExibirMensagemErroUsuarioAtualizado();
+                        }
                     }
                 }
             }
@@ -210,27 +212,30 @@ namespace mercearia_seu_joao.View
 
         private void Excluir(object sender, RoutedEventArgs e)
         {
-            string data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            if (txtId.Text != "")
+            if (VerificaCampos() == true)
             {
-                int id = int.Parse(txtId.Text);
-                MessageBoxResult result = MessageBox.Show(
-                    $"Deseja excluir o usuario id:{id} ?",
-                    "Excluir Usuario",
-                    MessageBoxButton.YesNo,
-                    MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes)
+                string data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                if (txtId.Text != "")
                 {
-                    bool foiExcluido = cUsuario.ExcluirUsuario(id, data);
-                    if (foiExcluido == true)
+                    int id = int.Parse(txtId.Text);
+                    MessageBoxResult result = MessageBox.Show(
+                        $"Deseja excluir o usuario id:{id} ?",
+                        "Excluir Usuario",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
                     {
-                        Mensagens.ExibirMensagemUsuarioExcluido();
-                        LimpaTodosOsCampos();
-                        AtualizaDataGrid();
-                    }
-                    else
-                    {
-                        Mensagens.ExibirMensagemErroUsuarioExcluido();
+                        bool foiExcluido = cUsuario.ExcluirUsuario(id, data);
+                        if (foiExcluido == true)
+                        {
+                            Mensagens.ExibirMensagemUsuarioExcluido();
+                            LimpaTodosOsCampos();
+                            AtualizaDataGrid();
+                        }
+                        else
+                        {
+                            Mensagens.ExibirMensagemErroUsuarioExcluido();
+                        }
                     }
                 }
             }

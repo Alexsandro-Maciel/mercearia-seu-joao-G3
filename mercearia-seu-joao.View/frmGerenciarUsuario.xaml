@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mercearia_seu_joao.View"
         mc:Ignorable="d"
-        Title="frmGerenciarUsuario" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="frmGerenciarUsuario" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid
          x:Name="TelaGerenciarUsuario" Background="#FF078231">
         <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="47,399,0,0" VerticalAlignment="Top" Height="28" Width="168" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="Excluir"/>
