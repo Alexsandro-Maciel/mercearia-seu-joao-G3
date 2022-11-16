@@ -58,7 +58,7 @@ namespace mercearia_seu_joao.View
 
         private bool VerificarCamposPreenchidos()
         {
-            return boxEmail.Text == null || boxSenha.Password == null ? false : true;
+            return boxEmail.Text == "" || boxSenha.Password == "" ? false : true;
         }
 
         private void AbrirFrmMenu()

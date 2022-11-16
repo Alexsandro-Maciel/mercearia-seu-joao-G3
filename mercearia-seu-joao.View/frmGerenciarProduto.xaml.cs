@@ -34,6 +34,7 @@ namespace mercearia_seu_joao.View
                 return false;
             }
         }
+
         private void NovoProduto(object sender, RoutedEventArgs e)
         {
             if (VerificaCampos() == true)
@@ -137,12 +138,13 @@ namespace mercearia_seu_joao.View
                 Single.Parse(boxPrecoUnitario.Text),
                 boxFornecedor.Text
                 );
+           
 
-            if (foiInserido == true)
+            if (foiInserido == false)
             {
                 Mensagens.ExibirMensagemProdutoCadastrado();
-                LimpaTodosOsCampos();
                 AtualizaDataGrid();
+                LimpaTodosOsCampos();
             }
             else
             {

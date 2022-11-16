@@ -11,6 +11,8 @@ public class Produto
     public int qtdEstoque { get; set; }
     public float precoUnitario { get; set; }
     public string fornecedor { get; set; }
-    public string dataExclusao { get; set; }
+    public string dataInserido { get; set; }
+    public string dataAlterado { get; set; }
+    public string dataExcluido { get; set; }
 }
 

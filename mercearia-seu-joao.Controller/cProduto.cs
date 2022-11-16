@@ -5,19 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 public class cProduto
 {
-    public static bool InserirProduto(string nome, int quantidade, float precoUnitario, string fornecedor)
+    public static bool InserirProduto(string nome, int quantidade, float precoUnitario, string fornecedor, string dataInserido)
     {
-        return ConsultarProduto.InserirProduto(nome, quantidade, precoUnitario, fornecedor);
+        return ConsultarProduto.InserirProduto(nome, quantidade, precoUnitario, fornecedor, dataInserido);
     }
 
-    public static bool ExcluirProduto(int id)
+    public static bool ExcluirProduto(int id, string dataExcluido)
     {
-        return ConsultarProduto.ExcluirProduto(id);
+        return ConsultarProduto.ExcluirProduto(id, dataExcluido);
     }
 
-    public static bool AlterarProduto(int id, string nome, int quantidade, float precoUnitario, string fornecedor)
+    public static bool AlterarProduto(int id, string nome, int quantidade, float precoUnitario, string fornecedor, string dataAlterado)
     {
-        return ConsultarProduto.AlterarProduto(id, nome, quantidade, precoUnitario, fornecedor);
+        return ConsultarProduto.AlterarProduto(id, nome, quantidade, precoUnitario, fornecedor, dataAlterado);
     }
 
     public static List<Produto> ObterTodosProdutos()
