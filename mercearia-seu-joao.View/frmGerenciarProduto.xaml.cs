@@ -80,12 +80,15 @@ namespace mercearia_seu_joao.View
                     MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
+                    string dataAlterado = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
                     bool foiAtualizado = cProduto.AlterarProduto(
                         id,
                         boxNome.Text,
                         Int32.Parse(boxQuantidade.Text),
                         Single.Parse(boxPrecoUnitario.Text),
-                        boxFornecedor.Text
+                        boxFornecedor.Text,
+                        dataAlterado
                         );
 
                     if (foiAtualizado == true)
@@ -114,7 +117,9 @@ namespace mercearia_seu_joao.View
                     MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    bool foiExcluido = cProduto.ExcluirProduto(id);
+                    string dataExcluido = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    bool foiExcluido = cProduto.ExcluirProduto(id, dataExcluido);
                     if (foiExcluido == true)
                     {
                         Mensagens.ExibirMensagemProdutoExcluido();
@@ -132,11 +137,14 @@ namespace mercearia_seu_joao.View
 
         private void AdicionaProduto()
         {
+            string dataInserido = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
             bool foiInserido = cProduto.InserirProduto(
                 boxNome.Text,
                 Int32.Parse(boxQuantidade.Text),
                 Single.Parse(boxPrecoUnitario.Text),
-                boxFornecedor.Text
+                boxFornecedor.Text,
+                dataInserido
                 );
            
 
