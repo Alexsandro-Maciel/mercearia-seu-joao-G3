@@ -122,7 +122,7 @@ public static class ConsultasUsuario
 
         return foiInserido;
     }
-    public static bool ExcluirUsuario(int id, string data)
+    public static bool ExcluirUsuario(string data)
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         bool foiExcluido = false;
@@ -153,6 +153,7 @@ public static class ConsultasUsuario
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         bool foiAtualizado = false;
+        string senhaCriptografada = Criptografia.CriptografarMD5(senha);
 
         try
         {
@@ -165,7 +166,7 @@ public static class ConsultasUsuario
             comando.Parameters.AddWithValue("@id", id);
             comando.Parameters.AddWithValue("@nome", nome);
             comando.Parameters.AddWithValue("@email", email);
-            comando.Parameters.AddWithValue("@senha", senha);
+            comando.Parameters.AddWithValue("@senha", senhaCriptografada);
             comando.Parameters.AddWithValue("@data", data);
             comando.Parameters.AddWithValue("@tipoUsuario", tipoUsuario);
             var leitura = comando.ExecuteReader();
@@ -194,7 +195,7 @@ public static class ConsultasUsuario
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                SELECT * FROM usuario WHERE dataExcluido = null";
+                SELECT * FROM usuario ";
             var leitura = comando.ExecuteReader();
             while (leitura.Read())
             {

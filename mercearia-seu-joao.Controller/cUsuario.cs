@@ -27,9 +27,9 @@ public class cUsuario
     {
         return ConsultasUsuario.AlterarUsuario(id, nome, email, senha, data, tipoUsuario);
     }
-    public static bool ExcluirUsuario(int id, string data)
+    public static bool ExcluirUsuario(string data)
     {
-        return ConsultasUsuario.ExcluirUsuario(id, data);
+        return ConsultasUsuario.ExcluirUsuario(data);
     }
 }
 

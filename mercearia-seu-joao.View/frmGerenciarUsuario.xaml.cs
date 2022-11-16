@@ -154,6 +154,7 @@ namespace mercearia_seu_joao.View
                 if (ValidarSenha(boxSenha.Password) == true)
                 {
                     AdicionarUsuario();
+                    AtualizaDataGrid();
                 }
             }
         }
@@ -165,7 +166,7 @@ namespace mercearia_seu_joao.View
             {
                 if (boxId.Text != "")
                 {
-                    int id = int.Parse(txtId.Text);
+                    int id = int.Parse(boxId.Text);
                     MessageBoxResult result = MessageBox.Show(
                         $"Deseja alterar o usuário id:{id} ?",
                         "Alterar Usuário",
@@ -217,7 +218,7 @@ namespace mercearia_seu_joao.View
                 string data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 if (txtId.Text != "")
                 {
-                    int id = int.Parse(txtId.Text);
+                    int id = int.Parse(boxId.Text);
                     MessageBoxResult result = MessageBox.Show(
                         $"Deseja excluir o usuario id:{id} ?",
                         "Excluir Usuario",
@@ -225,7 +226,7 @@ namespace mercearia_seu_joao.View
                         MessageBoxImage.Question);
                     if (result == MessageBoxResult.Yes)
                     {
-                        bool foiExcluido = cUsuario.ExcluirUsuario(id, data);
+                        bool foiExcluido = cUsuario.ExcluirUsuario(data);
                         if (foiExcluido == true)
                         {
                             Mensagens.ExibirMensagemUsuarioExcluido();
@@ -238,6 +239,7 @@ namespace mercearia_seu_joao.View
                         }
                     }
                 }
+                AtualizaDataGrid();
             }
         }
     }
