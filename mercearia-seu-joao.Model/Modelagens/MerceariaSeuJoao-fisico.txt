@@ -1,0 +1,43 @@
+CREATE DATABASE MerceariaSeuJoao;
+
+USE MerceariaSeuJoao;
+
+CREATE TABLE usuario 
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+tipoUsuario VARCHAR(20) NOT NULL,
+email VARCHAR(255) NOT NULL,
+senha VARCHAR(255) NOT NULL,
+dataInserido DATETIME NOT NULL,
+dataAlterado DATETIME,
+dataExcluido DATETIME,
+UNIQUE(email)
+);
+
+CREATE TABLE produto
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+qtdEstoque INT NOT NULL,
+precoUnitario FLOAT NOT NULL,
+fornecedor VARCHAR(255) NOT NULL,
+dataInserido DATETIME NOT NULL, 
+dataAlterado DATETIME,
+dataExcluido DATETIME,
+UNIQUE(nome)
+);
+
+CREATE TABLE venda 
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+dataVenda DATETIME NOT NULL,
+qtdVendida INT NOT NULL,
+precoTotal FLOAT NOT NULL,
+idUsuario INT NOT NULL,
+idProduto INT NOT NULL
+);
+
+ALTER TABLE venda ADD FOREIGN KEY(idUsuario) REFERENCES usuario(id);
+ALTER TABLE venda ADD FOREIGN KEY(idProduto) REFERENCES produto(id);
+
