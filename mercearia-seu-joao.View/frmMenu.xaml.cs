@@ -65,7 +65,7 @@ namespace mercearia_seu_joao.View
         public void Main()
         {
             string data = DateTime.Now.ToString(" d MMMM yyyy ");
-            txtblockNome.Text = $"Olá fulano, hoje é dia {data}";
+            txtblockNome.Text = $"Olá , hoje é dia {data}";
         }
         
 
