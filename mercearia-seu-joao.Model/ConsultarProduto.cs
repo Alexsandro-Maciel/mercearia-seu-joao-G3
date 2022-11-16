@@ -17,7 +17,7 @@ public class ConsultarProduto
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                INSERT INTO produto (nome, qtdEstoque, precoUnitario, fornecedor, dataInserido) 
+                INSERT INTO produto (nome, qtdEstoque, precoUnitario, fornecedor, dataInserido, dataExcluido = null) 
                 VALUES (@nome, @qtdEstoque, @precoUnitario, @fornecedor, @dataInserido)";
             comando.Parameters.AddWithValue("@nome", nome);
             comando.Parameters.AddWithValue("@qtdEstoque", qtdEstoque);
@@ -85,7 +85,7 @@ public class ConsultarProduto
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
                 UPDATE Produto 
-                SET nome @nome, qtdEstoque @qtdEstoque, precoUnitario @precoUnitario, fornecedor @fornecedor dataAlterado @dataAlterado
+                SET nome @nome, qtdEstoque @qtdEstoque, precoUnitario @precoUnitario, fornecedor @fornecedor dataAlterado @dataAlterado, dataExcluido = null
                 WHERE id = @id";
             comando.Parameters.AddWithValue("@id", id);
             comando.Parameters.AddWithValue("@nome", nome);
