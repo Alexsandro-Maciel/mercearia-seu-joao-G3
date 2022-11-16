@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mercearia_seu_joao.View"
         mc:Ignorable="d"
-        Title="frmGerenciarUsuarios" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="frmGerenciarUsuario" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid
-         x:Name="frmGerenciarUsuario" Background="#FF078231">
+         x:Name="TelaGerenciarUsuario" Background="#FF078231">
         <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="47,399,0,0" VerticalAlignment="Top" Height="28" Width="168" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="Excluir"/>
         <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="47,366,0,0" VerticalAlignment="Top" Height="28" Width="168" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="AtualizarUsuario"/>
         <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="47,333,0,0" VerticalAlignment="Top" Height="28" Width="168" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="BotaoDeLimpar"/>
         <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="47,300,0,0" VerticalAlignment="Top" Height="28" Width="168" RenderTransformOrigin="-0.287,1.563" Background="#FF43F780" Click="Novo"/>
-        <DataGrid x:Name="dbUsuario" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="260,35,0,23" MouseDoubleClick="dbEUsuario" SelectionChanged="dbProduto_SelectionChanged"/>
+        <DataGrid x:Name="dbUsuario" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="260,35,0,23" MouseDoubleClick="dbEUsuario"/>
         <TextBox x:Name="boxEmail" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,147,0,0" Height="28" Background="#FF43F780"/>
         <TextBlock x:Name="txtId" HorizontalAlignment="Left" Margin="47,21,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
         <TextBox x:Name="boxNome" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,94,0,0" Height="28" Background="#FF43F780"/>
