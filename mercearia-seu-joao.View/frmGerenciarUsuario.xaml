@@ -15,16 +15,16 @@
         <DataGrid x:Name="dbUsuario" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="260,35,0,23" MouseDoubleClick="dbEUsuario" SelectionChanged="dbProduto_SelectionChanged"/>
         <TextBox x:Name="boxEmail" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,147,0,0" Height="28" Background="#FF43F780"/>
         <TextBlock x:Name="txtId" HorizontalAlignment="Left" Margin="47,21,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
-        <TextBox x:Name="boxConfirmaSenha" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,252,0,0" Height="28" Background="#FF43F780"/>
         <TextBox x:Name="boxNome" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,94,0,0" Height="28" Background="#FF43F780"/>
         <TextBlock x:Name="txtNome" HorizontalAlignment="Left" Margin="47,76,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtEmail" HorizontalAlignment="Left" Margin="47,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="E-mail"/></TextBlock>
         <TextBlock x:Name="txtSenha" HorizontalAlignment="Left" Margin="47,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Language="pt-br" Text="Senha"/></TextBlock>
         <TextBlock x:Name="txtConfirmaSenha" HorizontalAlignment="Left" Margin="47,231,0,0" TextWrapping="Wrap" Text="Confirmar Senha" VerticalAlignment="Top"/>
-        <TextBox x:Name="boxSenha" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Margin="47,198,0,0" Height="28" Background="#FF43F780"/>
         <TextBlock x:Name="boxId" HorizontalAlignment="Left" Margin="47,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF43F780" Height="27" Width="42"/>
         <ComboBox x:Name="cbTipoUsuario" HorizontalAlignment="Left" Margin="95,39,0,0" VerticalAlignment="Top" Width="120" Height="28"/>
         <TextBlock x:Name="txtTipoUsuario" HorizontalAlignment="Left" Margin="95,21,0,0" TextWrapping="Wrap" Text="Tipo Usuário" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="boxSenha" HorizontalAlignment="Left" Margin="47,200,0,0" VerticalAlignment="Top" Width="168" Height="28" Background="#FF43F780"/>
+        <PasswordBox x:Name="boxConfirmarSenha" HorizontalAlignment="Left" Margin="47,251,0,0" VerticalAlignment="Top" Width="168" Height="28" Background="#FF43F780"/>
 
     </Grid>
 </Window>

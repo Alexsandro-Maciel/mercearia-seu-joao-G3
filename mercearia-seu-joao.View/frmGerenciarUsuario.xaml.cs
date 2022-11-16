@@ -108,10 +108,10 @@ namespace mercearia_seu_joao.View
         private void AdicionarUsuario()
         {
             string data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            bool foiInserido = ConsultasUsuario.NovoUsuario(boxEmail.Text, boxSenha.Text, boxNome.Text, data, cbTipoUsuario.Text);
+            bool foiInserido = ConsultasUsuario.NovoUsuario(boxEmail.Text, boxSenha.Password, boxNome.Text, data, cbTipoUsuario.Text);
             if (foiInserido == true)
             {
-                if (boxSenha.Text == boxConfirmaSenha.Text)
+                if (boxSenha.Password == boxConfirmarSenha.Password)
                 {
                     Mensagens.ExibirMensagemUsuarioAdicionado();
                 }
@@ -130,7 +130,7 @@ namespace mercearia_seu_joao.View
         }
         private bool VerificaCampos()
         {
-            if (boxNome.Text != "" && boxEmail.Text != "" && boxConfirmaSenha.Text != "" && boxSenha.Text != "" && cbTipoUsuario.Text != "")
+            if (boxNome.Text != "" && boxEmail.Text != "" && boxConfirmarSenha.Password != "" && boxSenha.Password != "" && cbTipoUsuario.Text != "")
             {
                 return true;
             }
@@ -144,8 +144,8 @@ namespace mercearia_seu_joao.View
         {
             boxId.Text = "";
             boxNome.Text = "";
-            boxConfirmaSenha.Text = "";
-            boxSenha.Text = "";
+            boxConfirmarSenha.Password = "";
+            boxSenha.Password = "";
             boxEmail.Text = "";
             cbTipoUsuario.Text = "";
         }
@@ -176,7 +176,7 @@ namespace mercearia_seu_joao.View
                         id,
                         boxNome.Text,
                         boxEmail.Text,
-                        boxSenha.Text,
+                        boxSenha.Password,
                         data,
                         cbTipoUsuario.Text
                         );
@@ -200,7 +200,7 @@ namespace mercearia_seu_joao.View
             boxId.Text = usuario.id.ToString();
             boxNome.Text = usuario.nome;
             boxEmail.Text = usuario.email;
-            boxSenha.Text = usuario.senha;
+            boxSenha.Password = usuario.senha;
         }
 
         private void BotaoDeLimpar(object sender, RoutedEventArgs e)

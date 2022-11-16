@@ -62,7 +62,7 @@ public static class ConsultasUsuario
         {
             conexao.Open();
             var comando = conexao.CreateCommand();
-            comando.CommandText = @"Select * from Usuario Where email = @email";
+            comando.CommandText = @"Select * from usuario Where email = @email";
             comando.Parameters.AddWithValue("@email", email);
             var leitura = comando.ExecuteReader();
             while (leitura.Read())
@@ -97,7 +97,7 @@ public static class ConsultasUsuario
         {
             conexao.Open();
             var comando = conexao.CreateCommand();
-            comando.CommandText = @"Insert Into Usuario (email, senha, nome, dataInserido, dataExcluido, tipoUsuario) Values (@email, @senha, @nome, @data, null, @tipoUsuario )";
+            comando.CommandText = @"Insert Into usuario (email, senha, nome, dataInserido, dataExcluido, tipoUsuario) Values (@email, @senha, @nome, @data, null, @tipoUsuario )";
             comando.Parameters.AddWithValue("@email", email);
             comando.Parameters.AddWithValue("@senha", senhaCriptografada);
             comando.Parameters.AddWithValue("@nome", nome);
@@ -131,7 +131,7 @@ public static class ConsultasUsuario
         {
             conexao.Open();
             var comando = conexao.CreateCommand();
-            comando.CommandText = @"Insert Into Usuario(dataExcluido) Values(@data) WHERE id = @id;";
+            comando.CommandText = @"Insert Into usuario(dataExcluido) Values(@data) WHERE id = @id;";
             comando.Parameters.AddWithValue("@data", data);
             var leitura = comando.ExecuteReader();
             foiExcluido = true;
@@ -159,7 +159,7 @@ public static class ConsultasUsuario
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                UPDATE Usuario 
+                UPDATE usuario 
                 SET nome = @nome, email = @email, senha = @senha, dataAlterado = @data, tipoUsuario = @tipoUsuario, dataExcluido = null
                 WHERE id = @id";
             comando.Parameters.AddWithValue("@id", id);
@@ -194,7 +194,7 @@ public static class ConsultasUsuario
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-                SELECT * FROM Produto WHERE dataExcluido = null";
+                SELECT * FROM usuario WHERE dataExcluido = null";
             var leitura = comando.ExecuteReader();
             while (leitura.Read())
             {
